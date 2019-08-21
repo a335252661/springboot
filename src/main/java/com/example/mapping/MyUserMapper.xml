@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.mapperInterface.MyUserMapper" >
+
+<select id="queryUser" parameterType="com.example.bean.UserInfoListVo" resultType="com.example.bean.UserInfoListVo">
+    select a.* from userinfo a
+    <where>
+        <if test="userId != null and userId != '' " >
+            a.userId =#{userId}
+        </if>
+        <if test="userName != null and userName != '' " >
+            and a.userName like concat('%',#{userName},'%')
+        </if>
+        <if test="registerStart != null and registerStart != '' " >
+            and a.creatDate >= str_to_date(#{registerStart}, '%Y-%m-%d')
+        </if>
+        <if test="registerEnd != null and registerEnd != '' " >
+            <![CDATA[
+		and a.creatDate < str_to_date(#{registerEnd}, '%Y-%m-%d')
+		]]>
+        </if>
+        <if test="isUse != null" >
+            and a.isUse =#{isUse}
+        </if>
+    </where>
+
+</select>
+
+</mapper>
