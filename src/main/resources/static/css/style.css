@@ -1,0 +1,642 @@
+@CHARSET "UTF-8";
+
+/**********************
+	common
+**********************/
+html,body{
+	margin:0;
+	padding:0;
+	font:normal 12px 宋体, tahoma, arial, helvetica, sans-serif;
+}
+
+body{
+	text-align:center;
+}
+
+form{
+	margin:0;
+	padding:0;
+}
+
+/* 禁用ie输入框X按钮*/
+input[type=text]::-ms-clear {
+    display: none;
+}
+
+.tabs-panels .panel,
+.tabs-panels .panel .panel-body, 
+.window .panel,
+.window .panel .panel-body{
+	position: relative;
+}
+
+.tabs-panels .easyui-layout .layout-panel,
+.window .easyui-layout .layout-panel{
+	position: absolute;
+}
+
+input[type=text],input[type=password]{
+	width:126px;
+	height:20px;
+	line-height:20px;
+	margin:0;
+	padding:0 2px;
+	border: 1px solid #c3d9e0;
+}
+
+textarea{
+    margin:0;
+    padding:0;
+	line-height:20px;
+    border: 1px solid #c3d9e0;
+}
+
+input.midText{
+	width:180px;
+}
+input.largeText{
+	width:220px;
+}
+textarea.largeText{
+    width:220px;
+}
+textarea[readonly],textarea[readonly="readonly"]{
+    background-color: #E2E2E2;
+}
+
+td.dasMidWidth{
+	width:57px;
+}
+
+td.dasLargeWidth{
+	width:110px;
+}
+
+td.dasSmallWidth{
+	width:32px;
+}
+
+/* 非法样式 */
+input.validatebox-invalid{
+	border-color: #ffa8a8;
+}
+
+input[disabled],input:disabled{
+	background-color: #E2E2E2;
+	color:#777363;
+}
+
+input[readonly],input[readonly="readonly"]{
+	background-color: #E2E2E2;
+}
+
+/** message过长出滚动条 */
+.messager-body div.message-text-body{
+	max-height:350px;
+	overflow:auto;
+}
+
+/** 放大镜 */
+span.selector{
+	display: inline-block;
+	width: 22px;
+	height: 22px;
+	line-height: 22px;
+	cursor: pointer;
+}
+span.selector:HOVER{
+	background-color: #6caef5;
+}
+
+.tabs-body{
+	/*background:url(static/img/bg.png) no-repeat;*/
+}
+
+.datebox .combo-text{
+	text-align: right;
+}
+
+.txt-center{
+	text-align: center;
+}
+
+.txt-right{
+	text-align: right;
+}
+
+.combobox-item{
+	height:14px;
+}
+
+/* combo的输入框变回白色 */
+.combo .combo-text[readonly],.combo .combo-text[readonly="readonly"]{
+	background-color: #fff;
+}
+
+/* combo的输入框变成灰色 */
+.combo .combo-text[disabled],.combo .combo-text[disabled="disabled"]{
+    background-color: #E2E2E2;
+    color:#000;
+}
+
+/* combo输入框非法样式*/
+.combo .validatebox-invalid[readonly],.combo .validatebox-invalid[readonly="readonly"] {
+	background-color: #fff3f3;
+}
+
+/* combo边框非法样式 */
+span.combo-invalid {
+	border-color: #ffa8a8;
+}
+
+input.numberbox{
+	text-align: right;
+}
+
+/* div间隔 */
+.spacing{
+	height:10px
+}
+
+/* 下划线的cell */
+.table-link-cell{
+	color:blue;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.datagrid-row-over .table-link-cell{
+	color:#fff;
+}
+
+a.table-link-cell{
+	display: inline-block;
+	width: 100%;
+}
+
+/** 带下拉菜单按钮 */
+div.easyui-panel a.func-menu-button{
+	color:#fff;
+	background: #1a7bc9;
+}
+
+div.easyui-panel a.func-menu-button:hover{
+	color:#000;
+	background: #6caef5;
+}
+
+
+/**  datagrid行样式  **/
+/* 咖啡色
+tr.datagrid-row-selected {
+	background: transparent;
+	color: #404040;
+}
+
+tr.datagrid-row-alt {
+	background: #f5f5f5;
+}
+
+tr.invalid-style{
+	background-color:#9e9e9e;
+}
+
+tr.datagrid-row-over {
+  background: #654b24;
+  color: #fff;
+  cursor: default;
+}
+
+tr.ex-datagrid-highlight{
+	background: #6caef5;
+	color: #fff;
+}
+
+.combo-panel tr.datagrid-row-selected {
+	background: #6caef5;
+	color: #fff;
+}
+*/
+
+/* 蓝色 */
+tr.datagrid-row-selected {
+	background: transparent;
+	color: #404040;
+}
+
+tr.datagrid-row-alt {
+	background: #f5f5f5;
+}
+
+tr.invalid-style{
+	background-color:#9e9e9e;
+}
+tr.little-green{
+	background-color:#BDF1E7;
+}
+
+tr.datagrid-row-over {
+  background: #6caef5;
+  color: #fff;
+  cursor: default;
+}
+
+tr.ex-datagrid-highlight{
+	background: #6caef5;
+	color: #fff;
+}
+
+.combo-panel tr.datagrid-row-selected {
+	background: #6caef5;
+	color: #fff;
+}
+
+/**  datagrid行样式：盘点详细，有差异时：高亮显示  **/
+tr.datagrid-row-stocktake-diff {
+    background-color:#ffe48d;
+}
+
+/**  datagrid行样式：盘点详细，盘出新品时：高亮显示  **/
+tr.datagrid-row-stocktake-new {
+    background-color:#6293BB;
+}
+
+/** datagrid行样式：入库预报详细红冲数据 红色高亮显示*/
+tr.datagrid-row-adjustmentStock-red{
+	background-color:#FFBBBB;
+}
+
+
+/**  datagrid行样式：出库复验,待复验商品：字体加粗  **/
+tr.datagrid-row-check-font-bolder {
+     font-weight:bolder;
+}
+
+/**  datagrid行样式：出库复验,多捡的时候，字体颜色变红  **/
+tr.datagrid-row-check-error {
+    color:#ff0000;
+}
+
+/**  datagrid行样式：出库复验,漏检的时候，字体颜色变蓝  **/
+tr.datagrid-row-check-missed-error {
+    color:#0000ff;
+}
+
+/**  datagrid行样式：出库复验,商品不存在时，背景色变红  **/
+div.datagrid-row-check-pdt-not-exists {
+    background-color:#ff0000;
+    opacity:0.7;
+}
+
+/**  门店退欠货详细保存时：物流编号字体变大  **/
+span.shop-return-detail-font-style {
+    font-weight:bolder;
+    font-size:30pt;
+}
+/**********************
+	左边栏
+**********************/
+#left{
+	width:180px;
+	position:relative;
+}
+
+.menu-panel{
+	position: absolute;
+	overflow: auto;
+	width: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 90px;
+}
+
+.login-info-panel{
+	height:60px;border: 0;
+}
+
+.login-info-table{
+	
+}
+/**********************
+	header
+**********************/
+#header{
+	font-size:15px;
+	height:100%;
+	color:#404040;
+}
+
+#header ul{
+	list-style:none;
+	height: 100%;
+	margin: 0 auto;
+}
+
+#header ul li{
+	float:right;
+	padding: 0 5px;
+	line-height: 38px;
+}
+
+#header ul li a{
+	text-decoration:none;
+	color:#404040;
+	padding: 6px 8px;
+}
+
+#header ul li a:hover{
+	padding: 4px 8px;
+	background: #6caef5;
+}
+
+/**********************
+	detail
+**********************/
+.detail-dialog{
+}
+
+.detail-value-input{
+}
+
+.detail-value-combo{
+	width:132px;
+}
+
+.detail-value-auto-complete{
+	width:128px;
+}
+
+.detail-property-panel{
+	width:240px;
+}
+.detail-property-panel-list{
+	width:240px;
+}
+.detail-property-panel-zone{
+    width:460px;
+}
+.detail-property-panel-twoCol{
+    width:470px;
+}
+.detail-property-panel-warehouse{
+    width:490px;
+}
+.detail-property-panel-productpackage{
+	width:535px;
+}
+.detail-property-panel-product-left{
+	width:528px;
+}
+.detail-property-panel-product-right{
+	width:540px;
+}
+.detail-property-panel-location{
+	width:770px;
+}
+
+
+.detail-sys-property-panel{
+	height:60px;
+	padding: 5px;
+}
+
+.detail-sys-property-panel .td-date{
+	width: 97%;
+}
+
+.detail-sys-property-panel .td-employeeno{
+	width: 100px;
+}
+
+.detail-sys-property-panel-twoline{
+    height:90px;
+    padding: 5px;
+}
+.detail-sys-property-panel-twoline .td-date{
+    margin-left:0px;
+}
+.detail-sys-property-panel-twoline .td-employeeno{
+     margin-left:40px;
+}
+.detail-sys-property-panel-twoline .employeeno{
+     margin-left:6px;
+}
+
+.dialog-kv-layout{
+	overflow: hidden;
+}
+
+.detail-property-table{
+	width:100%;
+}
+
+.detail-property-panel .td-label{
+	width:100px;
+}
+.detail-property-panel-towCol.td-label{
+    width:100px;
+}
+
+.dialog-bottom-buttons{
+ 	margin:10px 0 0 0;
+	text-align:right;
+	padding:5px;
+	border-top: 1px solid #ddd;
+}
+
+/**********************
+	other
+**********************/
+
+.invalidColor{
+	color:red;
+}
+.numColor{
+	color:blue;
+}
+
+.tabs-panels .search-panel-collapsible{
+	position:absolute;
+	z-index:1;
+	left:5px;
+	right:5px;
+}
+.search-panel-collapsible .panel-header{
+	cursor:pointer;
+}
+.list-result-collapsible{
+	top:28px;
+}
+/**********************
+	特定画面设置
+**********************/
+/*
+table.impAcceptDetailHead input[type=text]{
+	width:180px;
+}
+
+#inComingForecastDetailHeader .detail-value-input{
+	width:180px;
+}
+
+#inComingForecastListSearchForm .search-field-input{
+	width:180px;
+}*/
+
+/********************************************
+    特定画面设置：盘点管理画面：上传所用样式
+*********************************************/
+/* 这一段用来隐藏 input 控件。简单的display:none 有可能会因为安全问题无法弹出 */
+input.uploadFile{
+  height: 30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 100px;
+  z-index: 2;
+
+  opacity: 0.0; /* Standard: FF gt 1.5, Opera, Safari */
+  filter: alpha(opacity=0); /* IE lt 8 */
+  -ms-filter: "alpha(opacity=0)"; /* IE 8 */
+  -khtml-opacity: 0.0; /* Safari 1.x */
+  -moz-opacity: 0.0; /* FF lt 1.5, Netscape */
+}
+
+a.uploader .l-btn-text{
+	margin:0;
+}
+
+a.uploader .qq-uploader-button-text{
+	margin:0 4px 0 24px;
+}
+
+a.uploader .qq-uploader{
+	height:24px;
+}
+
+a.uploader .qq-uploader .qq-upload-button{
+	top: -7px;
+	height: 100%;
+/* 	background: red; */
+	width: auto;
+}
+
+
+/***/
+.float-left{
+	float:left;
+}
+
+/***/
+
+/**********************
+	icon
+**********************/
+.icon-none{
+	width:0px;
+}
+.icon-datagrid{
+	background:url('../img/grid.png') no-repeat;
+}
+.icon-copy{
+	background:url('../img/copy.png') no-repeat center center;
+}
+.icon-start{
+	background:url('../img/start.png') no-repeat center center;
+}
+.icon-stop{
+	background:url('../img/stop.png') no-repeat center center;
+}
+.icon-lock{
+	background:url('../img/lock.png') no-repeat center center;
+}
+.icon-unlock{
+	background:url('../img/unlock.png') no-repeat center center;
+}
+.icon-upload{
+	background:url('../img/upload.png') no-repeat center center;
+}
+.icon-download{
+	background:url('../img/download.png') no-repeat center center;
+}
+.icon-truck{
+	background:url('../img/truck.png') no-repeat center center;
+}
+.icon-split{
+	background:url('../img/split.png') no-repeat center center;
+}
+.icon-zipper{
+	background:url('../img/zipper.png') no-repeat center center;
+}
+.icon-pin-v{
+	background:url('../img/pin_v.png') no-repeat center center;
+}
+.icon-pin-h{
+	background:url('../img/pin_h.png') no-repeat center center;
+}
+.icon-money{
+	background:url('../img/money.png') no-repeat center center;
+}
+.icon-close{
+	background:url('../img/no.png') no-repeat center center;
+}
+.icon-clear{
+	background:url('../img/clear.png') no-repeat center center;
+}
+.icon-price{
+	background:url('../img/price.png') no-repeat center center;
+}
+.icon-priority{
+	background:url('../img/priority.png') no-repeat center center;
+}
+.icon-quality{
+	background:url('../img/quality.png') no-repeat center center;
+}
+.icon-barcode{
+	background:url('../img/barcode.png') no-repeat center center;
+}
+.icon-history{
+	background:url('../img/add_history.png') no-repeat center center;
+}
+.icon-maintenance{
+	background:url('../img/maintenance.png') no-repeat center center;
+}
+.icon-use{
+	background:url('../img/use.png') no-repeat center center;
+}
+.icon-distribution{
+	background:url('../img/distribution.png') no-repeat center center;
+}
+.icon-plan{
+	background:url('../img/plan.png') no-repeat center center;
+}
+.icon-add-save{
+	background:url('../img/add_save.png') no-repeat center center;
+}
+.icon-merge{
+	background:url('../img/merge.png') no-repeat center center;
+}
+.icon-split-box{
+	background:url('../img/split-box.png') no-repeat center center;
+}
+.icon-return-up{
+	background:url('../img/return-up.png') no-repeat center center;
+}
+.icon-lock-open{
+	background:url('../img/lock_open.png') no-repeat center center;
+}
+.datagrid-header-rownumber,
+.datagrid-cell-rownumber {
+  width: 40px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
+

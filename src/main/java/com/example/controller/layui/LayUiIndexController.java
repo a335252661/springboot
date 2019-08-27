@@ -1,11 +1,9 @@
-package com.example.springboot;
+package com.example.controller.layui;
 
 import com.example.service.HelloServiceApi;
-import com.example.serviceImpl.HelloServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
@@ -18,10 +16,10 @@ import javax.servlet.http.HttpServletRequest;
  */
 //@RestController    //该注解是 @Controller 和 @ResponseBody 注解的合体版
 @Controller
-public class HelloController {
+public class LayUiIndexController {
 
 //    @Autowired
-//    private SystemProperties systemProperties;
+//    private SystemProperties systemPr operties;
 
     @Resource
     private HelloServiceApi helloServiceApi;
@@ -30,16 +28,18 @@ public class HelloController {
 
     //Resource,Autowired 做bean的注入时使用
 
-    @RequestMapping("hello")  //和@RequestMapping("/hello") 都可以访问
+    @RequestMapping("hellos")  //和@RequestMapping("/hello") 都可以访问
     @ResponseBody   //返回的是内容
     public String fun(){
-        helloServiceApi.fun();
+//        helloServiceApi.fun();
         return "hello Spring Boot!";
     }
 
-    @RequestMapping("vm")
-    public String vm(ModelAndView mav, HttpServletRequest request){
-        return "test";
+
+    @RequestMapping("")
+    public String index(ModelAndView mav, HttpServletRequest request){
+        return "html/layUiIndex";
     }
+
 
 }

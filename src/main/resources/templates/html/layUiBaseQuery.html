@@ -1,0 +1,127 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/layui-2.4.5/css/layui.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="/static/css/commonStyle.css">
+    <script src="/static/jqery/jquery.min.js"></script>
+</head>
+<body>
+<div >
+    <!--#*fa-spin 旋转*#-->
+    <button class="layui-btn layui-btn-normal"><i class="fa fa-plus"></i> &nbsp;新增</button>
+    <button id="userListSearch" lay-submit="" lay-filter="demo2"
+            class="layui-btn layui-btn-normal" ><i class="fa fa-cog fa-spin"></i> &nbsp;查询</button>
+    <button id="userListSave" class="layui-btn layui-btn-normal"><i class="fa fa-remove"></i> &nbsp;保存</button>
+    <button id="userListDel" class="layui-btn layui-btn-normal"><i class="fa fa-remove"></i> &nbsp;删除</button>
+    <button id="easyuiUserListExport" class="layui-btn layui-btn-normal"><i class="fa fa-hand-o-right"></i> &nbsp;按条件导出</button>
+    <button class="layui-btn layui-btn-normal"><i class="fa fa-hand-o-right"></i> &nbsp;全部导出</button>
+    <button class="layui-btn layui-btn-normal" id="zzz"><i class="fa fa-clipboard"></i> &nbsp;打印预览</button>
+    <button class="layui-btn layui-btn-normal" id="layuilook"><i class="fa fa-clipboard"></i> &nbsp;查看行元素</button>
+    <button class="layui-btn layui-btn-normal" id="download"><i class="fa fa-clipboard"></i> &nbsp;下载FTP文件</button>
+</div>
+
+
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;"  id="upanddown" onmouseover="this.style.cursor='hand'">
+    <legend><i class="fa fa-tasks" id=""></i>&nbsp;基础查询信息</legend>
+</fieldset>
+
+<div style="padding: 20px; background-color: #F2F2F2;" id="formdiv">
+    <form class="layui-form" action="userListExport" id="baseQueryForm">
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">用户ID:</label>
+            <div class="layui-input-block">
+                <input type="text" name="userId" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+           <!-- #*inline 一行多个*#&lt;!&ndash;&ndash;&gt;-->
+            <div class="layui-inline">
+                <label class="layui-form-label">用户姓名</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="userName" lay-verify="required" class="layui-input" placeholder="请输入用户名">
+                </div>
+            </div>
+
+                <div class="layui-inline">
+                    <label class="layui-form-label">注册时间</label>
+                    <div class="layui-input-inline">
+                        <input type="text" id ="registerStart"  name="registerStart" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-inline">
+                    <label class="layui-form-label">~~</label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="registerEnd" name="registerEnd" class="layui-input">
+                    </div>
+                </div>
+
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">是否有效:</label>
+            <div class="layui-input-block">
+                <select name="isUse" id="">
+                    <option value="">请选择</option>
+                    <option value="1">有效</option>
+                    <option value="0">无效</option>
+                </select>
+            </div>
+        </div>
+
+
+<!--##        <div class="layui-form-item">-->
+<!--##            <div class="layui-input-block">-->
+<!--##                <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>-->
+<!--##                <button type="reset" class="layui-btn layui-btn-primary">重置</button>-->
+<!--##            </div>-->
+<!--##        </div>-->
+
+
+    </form>
+</div>
+
+
+<!--#*数据table*#-->
+<table class="layui-table" id="tableDemo" lay-filter="tableDemo">
+<!--##    <thead>
+##    <tr>
+##        <th lay-data="{field:'userId', width:80, sort: true}">ID</th>
+##        <th lay-data="{field:'userName', width:80}">姓名</th>
+##        <th lay-data="{field:'passWord', width:80, sort: true}">用户密码</th>
+##        <th lay-data="{field:'isUse', sort: true}">是否有效</th>
+##        <th lay-data="{field:'creatDate', sort: true}">创建时间</th>
+##    </tr>
+##    </thead>-->
+</table>
+
+<!--#*代码展示*#
+#*<pre class="layui-code">
+//代码区域
+var a = 'hello layui';
+</pre>*#-->
+
+<script src="/static/layui-2.4.5/layui.js"></script>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+<script type="text/html" id="switchTpl">
+    <!-- 这里的 checked 的状态只是演示 -->
+    <input type="checkbox" name="sex" value="{{d.id}}" lay-skin="switch" lay-text="女|男" lay-filter="sexDemo" {{ d.id == 10003 ? 'checked' : '' }}>
+</script>
+
+<script type="text/html" id="checkboxTpl">
+    <!-- 这里的 checked 的状态只是演示 -->
+    <input type="checkbox" name="lock" value="{{d.id}}" title="锁定" lay-filter="lockDemo" {{ d.id == 10006 ? 'checked' : '' }}>
+</script>
+<script src="/static/js/layuiDemo/indexLayui.js"></script>
+<script src="/static/js/common/cldCommon.js"></script>
+</body>
+</html>

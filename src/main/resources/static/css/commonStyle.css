@@ -1,0 +1,244 @@
+.line_01{
+    padding: 0 20px 0;
+    margin: 20px 0;
+    line-height: 3px;
+    border-left: 200px solid #ddd;
+    border-right: 200px solid #ddd;
+    text-align: center;
+}
+
+.hr0{ height:1px;border:none;border-top:1px dashed #1E90FF;}
+.hr1{ height:1px;border:none;border-top:1px solid #000;}
+.hr2{ height:3px;border:none;border-top:3px double #6B8E23;}
+.hr3{ height:5px;border:none;border-top:5px ridge #45D6D8;}
+.hr4{ height:10px;border:none;border-top:10px groove #FF8C00;}
+.hr5{ height:10px;border:none;border-top:10px groove #FF8C00;}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 260px;
+    display: block;
+    z-index: 1;
+    color: #ffffff;
+    font-weight: 200;
+    background: #ffffff;
+    background-size: cover;
+    background-position: center center;
+    border-right: 1px solid #eee;
+    box-shadow: 6px 1px 20px rgba(69, 65, 78, 0.1);
+}
+
+.scrollbar-inner > .scroll-element .scroll-element_outer, .scrollbar-outer > .scroll-element .scroll-element_outer {
+    overflow: hidden;
+}
+
+.sidebar .sidebar-wrapper {
+    position: relative;
+    max-height: calc(100vh - 75px);
+    min-height: 100%;
+    overflow: auto;
+    width: 260px;
+    z-index: 4;
+    padding-top: 55px;
+    padding-bottom: 100px;
+}
+
+.sidebar .nav .nav-item {
+    display: list-item;
+}
+
+.la, .la-stack {
+    display: inline-block;
+}
+
+.la-dashboard:before {
+    content: "\f1b2";
+}
+
+.badge-count {
+    border: 1px solid #ddd;
+}
+
+.la {
+    font: normal normal normal 16px/1 LineAwesome;
+    font-size: inherit;
+    text-decoration: inherit;
+    text-rendering: optimizeLegibility;
+    text-transform: none;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+.la-fonticons:before {
+    content: "\f203";
+}
+
+.sidebar .nav .nav-item {
+    display: list-item;
+}
+
+.badge {
+    border-radius: 50px;
+    margin-left: auto;
+    line-height: 1;
+    padding: 6px 10px;
+    vertical-align: middle;
+    font-weight: 700;
+    font-size: 11px;
+}
+
+.badge-danger {
+    background-color: #ff646d;
+}
+
+.la-font:before {
+    content: "\f202";
+}
+
+.badge-success {
+    background-color: #59d05d;
+}
+
+.la-bell:before {
+    content: "\f140";
+}
+
+
+
+
+
+
+
+div#mws-wrapper
+{
+    height:auto;
+    min-height:100%;
+    position:relative;
+    z-index:0;
+}
+
+div#mws-sidebar-bg
+{
+    position:absolute;
+    top:0; bottom:0;
+}
+
+div#mws-sidebar
+{
+    width:200px;
+    padding-right:6px;
+    padding-top:72px;
+    float:left;
+    z-index:1;
+    position:relative;
+}
+
+
+
+div#mws-navigation ul,
+div#mws-navigation ul li
+{
+    margin:0;
+    list-style:none;
+}
+
+div#mws-navigation ul
+{
+    border-top:1px solid #18191d;
+    border-bottom:1px solid #535755;
+}
+
+div#mws-navigation ul li
+{
+    position:relative;
+    border-top:1px solid #535755;
+    border-bottom:1px solid #18191d;
+}
+
+div#mws-navigation ul li a,
+div#mws-navigation ul li span
+{
+    color:#ffffff;
+    outline:none;
+    display:block;
+    text-decoration:none;
+    margin-left:10px;
+    margin-right:16px;
+    position:relative;
+    padding:11px 48px 11px 40px;
+    line-height:20px;
+}
+
+div#mws-navigation ul li a.mws-ic,
+div#mws-navigation ul li span.mws-ic
+{
+    padding-left:40px;
+    background-position:4px center;
+}
+
+div#mws-navigation ul li a.mws-i-24,
+div#mws-navigation ul li span.mws-i-24
+{
+    padding-left:40px;
+    background-position:8px center;
+}
+
+div#mws-navigation ul li span.mws-nav-tooltip
+{
+    position:absolute;
+    line-height:1;
+    padding:5px;
+    right:-16px;
+    top:50%;
+    margin-top:-12px;
+}
+
+div#mws-navigation ul li ul
+{
+    background:url(../demo/systemDemo2/images/core/mws-inset.png);
+    border:0;
+
+    /* CSS 3 */
+
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+    -o-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+    -khtml-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+div#mws-navigation ul li ul.closed
+{
+    display:none;
+}
+
+div#mws-navigation ul li ul li
+{
+    border:0;
+    padding:0;
+    margin:0;
+}
+
+div#mws-navigation ul li ul li a,
+div#mws-navigation ul li ul li span
+{
+    display:block;
+    font-size:12px;
+    padding:4px 0 4px 40px;
+    color:#ffffff !important;
+    text-shadow:none;
+}
+
+div#mws-navigation ul li ul li:hover
+{
+    background:url(../demo/systemDemo2/images/core/mws-sub-nav-bg.png);
+}
+
+/**/
+.panel-theme {
+    border-color: #535755;
+}
