@@ -1,10 +1,10 @@
 package com.example.controller.layui;
 
 
-import com.example.bean.UserInfo;
 import com.example.bean.UserInfoListVo;
 import com.example.bean.basic.LayuiPageQueryResult;
 import com.example.bean.basic.MessageResult;
+import com.example.bean.exampleBean.UserInfo;
 import com.example.service.layui.LayuiBaseQueryApi;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

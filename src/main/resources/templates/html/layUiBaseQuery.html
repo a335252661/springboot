@@ -30,17 +30,38 @@
 </fieldset>
 
 <div style="padding: 20px; background-color: #F2F2F2;" id="formdiv">
+
+    <!--条件表单-->
     <form class="layui-form" action="userListExport" id="baseQueryForm">
 
-        <div class="layui-form-item">
+        <!--layui-form-item  表示一行显示-->
+      <!--  <div class="layui-form-item">
+
+
             <label class="layui-form-label">用户ID:</label>
-            <div class="layui-input-block">
+            <div class="layui-input-block" style="width: 100px">
                 <input type="text" name="userId" class="layui-input">
             </div>
-        </div>
+
+            <div class="layui-inline">
+                <label class="layui-form-label">密码</label>
+                <div class="layui-input-inline" style="width: 100px;">
+                    <input type="password" name="" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+
+        </div>-->
 
         <div class="layui-form-item">
-           <!-- #*inline 一行多个*#&lt;!&ndash;&ndash;&gt;-->
+
+            <div class="layui-inline">
+                <label class="layui-form-label">用户id</label>
+                <div class="layui-input-inline">
+                    <input type="password" name="" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
             <div class="layui-inline">
                 <label class="layui-form-label">用户姓名</label>
                 <div class="layui-input-inline">
@@ -104,7 +125,7 @@
 <!--#*代码展示*#
 #*<pre class="layui-code">
 //代码区域
-var a = 'hello layui';
+var a = 'elementUIindex.html layui';
 </pre>*#-->
 
 <script src="/static/layui-2.4.5/layui.js"></script>

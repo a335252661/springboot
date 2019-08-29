@@ -1,7 +1,7 @@
 package com.example.serviceImpl;
 
-import com.example.bean.UserInfo;
 import com.example.bean.UserInfoListVo;
+import com.example.bean.exampleBean.UserInfo;
 import com.example.mapperInterface.MyUserMapper;
 import com.example.service.HelloServiceApi;
 import org.springframework.stereotype.Service;

@@ -1,8 +1,15 @@
-package com.example.controller.layui;
+package com.example.controller.elementUI;
 
+import com.example.bean.UserInfoListVo;
 import com.example.service.HelloServiceApi;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -15,8 +22,10 @@ import javax.servlet.http.HttpServletRequest;
  * @description:
  */
 //@RestController    //该注解是 @Controller 和 @ResponseBody 注解的合体版
+@Api(description = "用户接口")
 @Controller
-public class LayUiIndexController {
+@RequestMapping("element")
+public class ElementUiIndexController {
 
 //    @Autowired
 //    private SystemProperties systemPr operties;
@@ -38,7 +47,16 @@ public class LayUiIndexController {
 
     @RequestMapping("")
     public String index(ModelAndView mav, HttpServletRequest request){
-        return "html/layUiIndex";
+        return "elementUI/elementUIindex";
+    }
+
+
+    @ApiOperation(value = "新增用户" ,  notes="新增注册")
+    @RequestMapping(value="/createUser",method=RequestMethod.POST,consumes= MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody   //返回的是内容
+    public String createUser(UserInfoListVo userInfo){
+        System.out.println("createUser:::"+userInfo.toString());
+        return "ok";
     }
 
 

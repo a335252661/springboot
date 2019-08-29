@@ -46,15 +46,15 @@
 		<!--<table tableName="logs"  domainObjectName="Logs">-->
 			<!--<property name="useActualColumnNames" value="true"/>-->
 		<!--</table>-->
-		<!--<table tableName="shop_order_detail"  domainObjectName="shopOrderDetail">-->
+		<table tableName="userinfo"  domainObjectName="UserInfo">
+			<!--useActualColumnNames ： true ：数据库是什么就是什么   false 驼峰原则-->
+			<property name="useActualColumnNames" value="true"/>
+		</table>
+
+		<!--<table tableName="%">-->
 			<!--&lt;!&ndash;useActualColumnNames ： true ：数据库是什么就是什么   false 驼峰原则&ndash;&gt;-->
 			<!--<property name="useActualColumnNames" value="false"/>-->
 		<!--</table>-->
-
-		<table tableName="%">
-			<!--useActualColumnNames ： true ：数据库是什么就是什么   false 驼峰原则-->
-			<property name="useActualColumnNames" value="false"/>
-		</table>
 
 		<!-- enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"  -->
 	</context>

@@ -1,8 +1,7 @@
 package com.example.mapperInterface;
 
-import com.example.bean.UserInfo;
 import com.example.bean.UserInfoListVo;
-import org.apache.ibatis.annotations.Mapper;
+import com.example.bean.exampleBean.UserInfo;
 
 import java.util.List;
 

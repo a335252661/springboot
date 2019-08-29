@@ -1,5 +1,7 @@
 package com.example.bean;
 
+import com.example.bean.exampleBean.UserInfo;
+
 import java.util.List;
 
 public class UserInfoListVo extends UserInfo {

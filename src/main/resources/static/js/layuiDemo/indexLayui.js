@@ -13,7 +13,7 @@ $(function () {
                     id: "90032",
                     text: "作业日志",
                     url: "layUiLogQuery"
-                },
+                }
             ]
         },
         {
@@ -29,7 +29,18 @@ $(function () {
                     id: "90042",
                     text: "列表二",
                     url: "baseQuery"
-                },
+                }
+            ]
+        },
+        {
+            id: "9005",
+            text: "系统管理",
+            children: [
+                {
+                    id: "90051",
+                    text: "菜单管理",
+                    url: "menuManagement"
+                }
             ]
         }
     ];
