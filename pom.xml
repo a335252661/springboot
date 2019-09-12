@@ -374,6 +374,7 @@
 
 
     <build>
+        <defaultGoal>compile</defaultGoal>
 
         <!--资源文件路径，springBoot默认静态资源路径的时resources.
 如果你的mapper.xml文件不再resources文件夹下，就需要再加一个resource，也就是
