@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+</head>
+<body>
+
+<div id="app1">
+    <ol>
+        <!-- 创建一个 todo-item 组件的实例 -->
+        <todo-item></todo-item>
+        <li>这是个待办项</li>
+    </ol>
+</div>
+
+
+<div id="app2">
+    <ol>
+        <!--
+          现在我们为每个 todo-item 提供 todo 对象
+          todo 对象是变量，即其内容可以是动态的。
+          我们也需要为每个组件提供一个“key”，稍后再
+          作详细解释。
+        -->
+        <todo-item2
+                v-for="item in groceryList"
+                v-bind:todo="item"
+                v-bind:key="item.id"
+        ></todo-item2>
+    </ol>
+</div>
+
+</body>
+<!-- import Vue before Element -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- import JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+    /*Vue.component 必须放在创建实例new Vue前面*/
+    Vue.component('todo-item1', {
+        template: '<li>这是个待办项222222222</li>'
+    })
+    new Vue({
+        el: '#app1',
+        data: function () {
+            return {visible: false}
+        }
+    })
+
+
+    Vue.component('todo-item2', {
+        // todo-item 组件现在接受一个
+        // "prop"，类似于一个自定义特性。
+        // 这个 prop 名为 todo。
+        props: ['todo'],
+        template: '<li>{{ todo.text }}</li>'
+    })
+    new Vue({
+        el: '#app2',
+        data: {
+            groceryList: [
+                {id: 0, text: '蔬菜'},
+                {id: 1, text: '奶酪'},
+                {id: 2, text: '随便其它什么人吃的东西'}
+            ]
+        }
+    })
+
+</script>
+</html>

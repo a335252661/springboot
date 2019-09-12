@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 //@RestController    //该注解是 @Controller 和 @ResponseBody 注解的合体版
 @Controller
+@RequestMapping("layui")
 public class LayUiIndexController {
 
 //    @Autowired

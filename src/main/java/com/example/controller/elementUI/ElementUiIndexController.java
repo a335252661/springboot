@@ -47,7 +47,7 @@ public class ElementUiIndexController {
 
     @RequestMapping("")
     public String index(ModelAndView mav, HttpServletRequest request){
-        return "elementUI/elementUIindex";
+        return "elementUI/elementUIindex1";
     }
 
 

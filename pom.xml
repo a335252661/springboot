@@ -24,7 +24,6 @@
     </properties>
 
 
-
     <dependencies>
 
         <!---->
@@ -95,9 +94,9 @@
 
         <!--微服务jar-->
         <!--<dependency>-->
-            <!--<groupId>com.shtel.paas</groupId>-->
-            <!--<artifactId>shtel-paas-sdk</artifactId>-->
-            <!--<version>1.0.3</version>-->
+        <!--<groupId>com.shtel.paas</groupId>-->
+        <!--<artifactId>shtel-paas-sdk</artifactId>-->
+        <!--<version>1.0.3</version>-->
         <!--</dependency>-->
 
         <!-- 格式化对象，方便输出日志 -->
@@ -195,7 +194,6 @@
         <!--xlsl文件导入-->
 
 
-
         <dependency>
             <groupId>org.dom4j</groupId>
             <artifactId>dom4j</artifactId>
@@ -252,14 +250,14 @@
 
         <!--redis-->
         <!--<dependency>-->
-            <!--<groupId>org.springframework.data</groupId>-->
-            <!--<artifactId>spring-data-redis</artifactId>-->
-            <!--<version>1.2.1.RELEASE</version>-->
+        <!--<groupId>org.springframework.data</groupId>-->
+        <!--<artifactId>spring-data-redis</artifactId>-->
+        <!--<version>1.2.1.RELEASE</version>-->
         <!--</dependency>-->
         <!--<dependency>-->
-            <!--<groupId>redis.clients</groupId>-->
-            <!--<artifactId>jedis</artifactId>-->
-            <!--<version>2.4.2</version>-->
+        <!--<groupId>redis.clients</groupId>-->
+        <!--<artifactId>jedis</artifactId>-->
+        <!--<version>2.4.2</version>-->
         <!--</dependency>-->
 
         <!--fastdfs-->
@@ -298,9 +296,6 @@
         </dependency>
 
 
-
-
-
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
@@ -330,9 +325,9 @@
 
         <!-- mybatis物理分页 -->
         <!--<dependency>-->
-            <!--<groupId>org.mybatis</groupId>-->
-            <!--<artifactId>mybatis-pagination</artifactId>-->
-            <!--<version>0.0.5</version>-->
+        <!--<groupId>org.mybatis</groupId>-->
+        <!--<artifactId>mybatis-pagination</artifactId>-->
+        <!--<version>0.0.5</version>-->
         <!--</dependency>-->
 
 
@@ -363,15 +358,13 @@
             <version>1.9.3</version>
         </dependency>
         <!--<dependency>-->
-            <!--<groupId>com.google.guava</groupId>-->
-            <!--<artifactId>guava</artifactId>-->
-            <!--<version>12.0</version>-->
+        <!--<groupId>com.google.guava</groupId>-->
+        <!--<artifactId>guava</artifactId>-->
+        <!--<version>12.0</version>-->
         <!--</dependency>-->
 
 
     </dependencies>
-
-
 
 
     <build>
@@ -400,7 +393,6 @@ mapper.xml所在的路径，这样打包就能打进去了-->
             </plugin>
         </plugins>
     </build>
-
 
 
 </project>

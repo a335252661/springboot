@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="/static/css/elementUIcss/elementUIindex.css">
+
+</head>
+
+<body>
+
+<center>
+    <div id="app">
+        <el-row>
+            <el-button id="" round>圆角按钮</el-button>
+            <el-button @click="jump" id="elementIndex" type="primary" round>element主页</el-button>
+            <el-button @click="jump" id="elementLayout" type="success" round>element布局</el-button>
+            <el-button @click="info" type="info" round>信息按钮</el-button>
+            <el-button type="warning" round>警告按钮</el-button>
+            <el-button type="danger" round>危险按钮</el-button>
+        </el-row>
+    </div>
+
+
+    <!--<template>-->
+    <!--<div>-->
+    <!--<select v-model="select" >-->
+    <!--<option v-for="(a,index) in arr" :key="index" :value="a.id">{{ a.name }}</option>-->
+    <!--</select>-->
+    <!--<p>您选择的名字的Id是：{{select}}</p>-->
+    <!--</div>-->
+    <!--</template>-->
+
+</center>
+
+<ol>
+    <!-- 创建一个 todo-item 组件的实例 -->
+    <!--<todo-item></todo-item>-->
+    <li>这是个待办项</li>
+</ol>
+
+
+</body>
+
+<!-- import Vue before Element -->
+<!--使用vue语法模式-->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- import JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<!--<script src="/static/js/elementUIjs/accept.js"></script>-->
+
+<script>
+    // new Vue().$mount('#app');
+    new Vue({
+        el: '#app',
+        data: {
+            mess: "qwer"
+        },
+        methods: {
+            jump: function () {
+                // console.info(info);
+
+                window.location.href = "http://localhost:8080/loginTest2.vm";     //在当前窗口中打开窗口
+            }
+        }
+    })
+
+    // Vue.component('todo-item', {
+    //     template: '<li>这是个待办项222222222</li>'
+    // })
+
+    // export default {
+    //     data(){
+    //         return{
+    //             select:'',
+    //             arr:[
+    //                 {id:'1',name:'html'},
+    //                 {id:'2',name:'css'},
+    //                 {id:'3',name:'js'},
+    //             ]
+    //         }
+    //     }
+    // }
+
+</script>
+
+</html>

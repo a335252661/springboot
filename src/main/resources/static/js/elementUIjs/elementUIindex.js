@@ -49,17 +49,72 @@ var me =  {
 var Ctor1 = Vue.extend(me)
 new Ctor1().$mount('#tab1')
 
+// var Main = {
+//     data() {
+//         const item = {
+//             date: '2016-05-02',
+//             name: '王小虎',
+//             address: '上海市普陀区金沙江路 1518 弄'
+//         };
+//         return {
+//             tableData: Array(20).fill(item)
+//         }
+//     }
+// };
+// var Ctor = Vue.extend(Main)
+// new Ctor().$mount('#tab')
+
+
+
+
+/*apptab*/
 var Main = {
     data() {
-        const item = {
-            date: '2016-05-02',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1518 弄'
-        };
         return {
-            tableData: Array(20).fill(item)
+            editableTabsValue: '2',
+            editableTabs: [{
+                title: 'Tab 1',
+                name: '1',
+                content: 'Tab 1 content'
+            }, {
+                title: 'Tab 2',
+                name: '2',
+                content: 'Tab 2 content'
+            }],
+            tabIndex: 2
+        }
+    },
+    methods: {
+        addTab(targetName) {
+
+
+
+            let newTabName = ++this.tabIndex + '';
+            this.editableTabs.push({
+                title: 'New Tab',
+                name: newTabName,
+                content: 'New Tab content'
+            });
+            this.editableTabsValue = newTabName;
+        },
+        removeTab(targetName) {
+            let tabs = this.editableTabs;
+            let activeName = this.editableTabsValue;
+            if (activeName === targetName) {
+                tabs.forEach((tab, index) => {
+                    if (tab.name === targetName) {
+                        let nextTab = tabs[index + 1] || tabs[index - 1];
+                        if (nextTab) {
+                            activeName = nextTab.name;
+                        }
+                    }
+                });
+            }
+
+            this.editableTabsValue = activeName;
+            this.editableTabs = tabs.filter(tab => tab.name !== targetName);
         }
     }
-};
+}
 var Ctor = Vue.extend(Main)
 new Ctor().$mount('#tab')
