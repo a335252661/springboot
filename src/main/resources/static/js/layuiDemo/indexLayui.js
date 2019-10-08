@@ -201,7 +201,7 @@ $(function () {
             var src = q.attr("name");
 
             //动态添加url
-           var ss = "http://localhost:8080/"+src;
+           var ss = "http://localhost:8081/"+src;
 
 
             var ppp = "<iframe src="+ss+ " frameborder='0' scrolling='false' style='width:1450px;height: 600px;'></iframe>";

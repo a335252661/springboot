@@ -14,7 +14,7 @@ import java.util.List;
  * @date 2019/8/15  18:41
  * @description:
  */
-//A component required a bean of type 'com.example.service.HelloServiceApi' that could not be found.
+//A component required a bean of type 'HelloServiceApi' that could not be found.
 @Service
 public class HelloServiceImpl implements HelloServiceApi {
 

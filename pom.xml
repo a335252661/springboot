@@ -14,6 +14,7 @@
     <groupId>com.example</groupId>
     <artifactId>springboot</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
     <name>springboot</name>
     <description>Demo project for Spring Boot</description>
 
@@ -26,6 +27,12 @@
 
     <dependencies>
 
+        <!--打war包-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
         <!---->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -363,6 +370,16 @@
             <artifactId>swagger-bootstrap-ui</artifactId>
             <version>1.9.3</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>5.1.6.RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-test</artifactId>
+        </dependency>
         <!--<dependency>-->
         <!--<groupId>com.google.guava</groupId>-->
         <!--<artifactId>guava</artifactId>-->
@@ -374,6 +391,14 @@
 
 
     <build>
+
+        <!--<defaultGoal>compile</defaultGoal>-->
+        <!--<sourceDirectory>src</sourceDirectory>-->
+        <!--打包完成之后的名字-->
+        <finalName>springboot</finalName>
+
+
+
         <!--资源文件路径，springBoot默认静态资源路径的时resources.
 如果你的mapper.xml文件不再resources文件夹下，就需要再加一个resource，也就是
 mapper.xml所在的路径，这样打包就能打进去了-->
@@ -392,11 +417,24 @@ mapper.xml所在的路径，这样打包就能打进去了-->
 
 
         <plugins>
+            <!--springboot 自带的打包插件-->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                    <mainClass>main.java.com.example.springboot.SpringbootApplication</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
+
     </build>
 
 

@@ -4,10 +4,8 @@ import com.example.bean.UserInfoListVo;
 import com.example.service.HelloServiceApi;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -55,7 +53,7 @@ public class ElementUiIndexController {
     @RequestMapping(value="/createUser",method=RequestMethod.POST,consumes= MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody   //返回的是内容
     public String createUser(UserInfoListVo userInfo){
-        System.out.println("createUser:::"+userInfo.toString());
+//        System.out.println("createUser:::"+userInfo.toString());
         return "ok";
     }
 
