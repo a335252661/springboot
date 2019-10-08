@@ -8,9 +8,14 @@ import com.example.bean.exampleBean.UserInfo;
 import com.example.service.layui.LayuiBaseQueryApi;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import java.io.FileOutputStream;
+import java.io.InputStream;
 
 @Controller
 @RequestMapping("layUiBaseQuery")
@@ -55,6 +60,54 @@ public class LayUiBaseQueryController {
     @ResponseBody
     public MessageResult downLoad(){
         MessageResult result = layuiBaseQueryApi.ftpDowmLoad();
+        return result;
+    }
+
+    /**
+     * 发送邮件
+     * @return
+     */
+    @RequestMapping("sendMail")
+    @ResponseBody
+    public MessageResult sendMail(){
+        MessageResult result = layuiBaseQueryApi.sendMail();
+        return result;
+    }
+
+    @RequestMapping(value = "/uploadFile")
+    @ResponseBody
+    public MessageResult uploadFile(@RequestParam("file") MultipartFile file){
+        FileOutputStream outfile = null;
+        try {
+            InputStream inputStream = file.getInputStream();
+
+//            String name = file.getName();
+            String name=file.getOriginalFilename();
+
+
+            outfile = new FileOutputStream("D:\\uploadFile\\"+name);
+            byte[] buf = new byte[8 * 1024];
+            int len = 0;
+            while ((len = inputStream.read(buf)) != -1) {
+                outfile.write(buf, 0, len);
+                outfile.flush();
+            }
+
+        }catch (Exception e){
+
+        }finally {
+            try{
+                if(outfile != null){
+                    outfile.close();
+                }
+            }catch(Exception e){
+                System.out.println("关闭输出流错误！");
+            }
+        }
+
+        MessageResult result = new MessageResult();
+        result.setMessage("上传成功~！");
+
         return result;
     }
 

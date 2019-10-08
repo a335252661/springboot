@@ -50,6 +50,42 @@ $(function () {
         console.info(data);
     })
 
+    layui.use('upload', function(){
+        var upload = layui.upload;
+
+        //执行上传
+        var uploadInst = upload.render({
+            elem: '#upload' //绑定元素
+            ,url: 'layUiBaseQuery/uploadFile' //上传接口
+            ,method: 'POST'
+            ,accept: 'file'
+            ,size: 50
+            ,before: function(obj){
+                layer.load();
+            }
+            ,done: function(res){//上传完毕回调
+
+                // if(data.result){
+                    layer.msg(res.message);
+                // };
+                console.info(res);
+                layer.closeAll('loading');
+                var result = '';
+
+                for(var i=0; i<res.length; i++){
+                    result = result + res[i].nsrsbh+"="+res[i].container+"\n";
+                }
+
+                $("#result").html(result);
+            }
+            ,error: function(){//请求异常回调
+                layer.closeAll('loading');
+                layer.msg('网络异常，请稍后重试！');
+            }
+        });
+    });
+
+
 
     //JavaScript代码区域
     layui.use(['element','form','laydate','table','layer','code'], function(){
@@ -333,16 +369,18 @@ $(function () {
 
         //下载ftp文件
         $("#download").click(function () {
-
             $.post('layUiBaseQuery/downLoad',null,function (data) {
                 layer.msg(data.message);
             })
-
-
            // alert("开始下载")
         })
 
-
+        //下载ftp文件
+        $("#sendMail").click(function () {
+            $.post('layUiBaseQuery/sendMail',null,function (data) {
+                layer.msg(data.message);
+            })
+        })
 
 
 

@@ -12,4 +12,6 @@ public interface LayuiBaseQueryApi {
     MessageResult layuiuUpdateUserInfo(UserInfoListVo userInfo);
 
     MessageResult ftpDowmLoad();
+
+    MessageResult sendMail();
 }
