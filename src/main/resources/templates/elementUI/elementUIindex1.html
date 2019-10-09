@@ -2,10 +2,9 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <!-- import CSS -->
+  <!-- 引入样式 -->
   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
   <link rel="stylesheet" href="/static/css/elementUIcss/elementUIindex.css">
-
 </head>
 
 <body>
@@ -16,10 +15,15 @@
     <!--</el-dialog>-->
   <!--</div>-->
 
-
-  <div id="tab1">
+<div>
+  <div id="logo" style="display:inline-block">
+    <img src="/static/imgs/logo.jpg" width="200px" height="66px"  alt="">
+  </div>
+  <div id="tab1" style="display:inline-block">
     <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+
       <el-menu-item index="1">处理中心</el-menu-item>
+
       <el-submenu index="2">
         <template slot="title">我的工作台</template>
         <el-menu-item index="2-1">选项1</el-menu-item>
@@ -32,12 +36,18 @@
           <el-menu-item index="2-4-3">选项3</el-menu-item>
         </el-submenu>
       </el-submenu>
+
       <el-menu-item index="3" disabled>消息中心</el-menu-item>
+
       <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
+
     </el-menu>
   </div>
 
-  <div class="line"></div>
+</div>
+
+
+  <div class="line" style="overflow: hidden"></div>
 
   <!--<el-menu-->
           <!--default-active="0"-->
@@ -53,6 +63,7 @@
 
   <div class="line"></div>
 
+  <!--左侧菜单-->
   <div id="tab">
     <el-container style="height: 500px; border: 1px solid #eee">
       <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
@@ -71,6 +82,8 @@
               <el-menu-item index="1-1" @click="addTab(editableTabsValue)">
                 用户查询
               </el-menu-item>
+
+
               <el-menu-item index="1-2">系统日志</el-menu-item>
             <!--</el-menu-item-group>-->
             <!--<el-menu-item-group title="分组2">-->
@@ -148,6 +161,7 @@
       <!--</el-container>-->
 
       <div id="apptab" style="margin-left: 10px;margin-top: 10px">
+
         <div style="margin-bottom: 20px;">
           <el-button
                   size="small"
@@ -156,6 +170,7 @@
             add tab
           </el-button>
         </div>
+
         <el-tabs v-model="editableTabsValue" type="card" closable @tab-remove="removeTab">
           <el-tab-pane
                   v-for="(item, index) in editableTabs"
@@ -166,9 +181,8 @@
             {{item.content}}
           </el-tab-pane>
         </el-tabs>
+
       </div>
-
-
 
     </el-container>
   </div>
@@ -179,13 +193,21 @@
   <!--<i class="el-icon-delete"></i>-->
   <!--<el-button type="primary" icon="el-icon-search">搜索</el-button>-->
 
+  <template>
+    <el-tabs v-model="activeName" @tab-click="handleClick">
+      <el-tab-pane label="用户管理" name="first">用户管理</el-tab-pane>
+      <el-tab-pane label="配置管理" name="second">配置管理</el-tab-pane>
+      <el-tab-pane label="角色管理" name="third">角色管理</el-tab-pane>
+      <el-tab-pane label="定时任务补偿" name="fourth">定时任务补偿</el-tab-pane>
+    </el-tabs>
+  </template>
 
 </body>
 
   <!-- import Vue before Element -->
   <!--使用vue语法模式-->
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
-  <!-- import JavaScript -->
+  <!-- 引入组件库 -->
   <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 
 

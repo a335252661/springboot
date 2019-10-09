@@ -75,7 +75,11 @@ var Main = {
             editableTabs: [{
                 title: 'Tab 1',
                 name: '1',
-                content: 'Tab 1 content'
+                content:{
+                    'todo-item': {
+                        template: '<el-tag type="success">标签二</el-tag>'
+                    }
+                }
             }, {
                 title: 'Tab 2',
                 name: '2',
@@ -87,13 +91,28 @@ var Main = {
     methods: {
         addTab(targetName) {
 
+            // alert(targetName);
+            var ss = 'www.baidu.com';
+            var ppp = "<iframe src="+ss+ " frameborder='0' scrolling='false' style='width:1450px;height: 600px;'></iframe>";
 
+            var mm ={
+                'todo-item': {
+                    template: '<el-tag type="success">标签二</el-tag>'
+                }
+            };
 
-            let newTabName = ++this.tabIndex + '';
+                let newTabName = ++this.tabIndex + '';
             this.editableTabs.push({
-                title: 'New Tab',
+                title: '用户查询',
                 name: newTabName,
-                content: 'New Tab content'
+                contents:mm
+
+                // components: {
+                //     'todo-item': {
+                //         template: '<el-tag type="success">标签二</el-tag>'
+                //     }
+                // }
+
             });
             this.editableTabsValue = newTabName;
         },

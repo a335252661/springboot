@@ -382,9 +382,27 @@ $(function () {
             })
         })
 
+        //展示图片
+        $("#displayPhoto").click(function () {
 
-
+            var img = '<img src="/static/imgs/small.jpg">'   //type: 1,//Page层类型
+            // var img = 'http://img.zcool.cn/community/012d6b573bc18d6ac7253f9adca1fd.gif'  // type: 2,//Page层类型
+            layer.open({
+                type: 1,//Page层类型
+                // area: ['500px', '300px'],
+                title: '你好，layer。',
+                shade: 0.6 ,//遮罩透明度
+                maxmin: true ,//允许全屏最小化
+                anim: 1 ,//0-6的动画形式，-1不开启
+                content: img
+        })
     });
+
+
+
+
+
+    })
 })
 
 

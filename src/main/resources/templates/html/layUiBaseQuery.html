@@ -11,18 +11,19 @@
 <body>
 <div >
     <!--#*fa-spin 旋转*#-->
-    <button class="layui-btn layui-btn-normal"><i class="fa fa-plus"></i> &nbsp;新增</button>
+    <button class="layui-btn layui-btn-sm"><i class="fa fa-plus"></i> &nbsp;新增</button>
     <button id="userListSearch" lay-submit="" lay-filter="demo2"
-            class="layui-btn layui-btn-normal" ><i class="fa fa-cog fa-spin"></i> &nbsp;查询</button>
-    <button id="userListSave" class="layui-btn layui-btn-normal"><i class="fa fa-remove"></i> &nbsp;保存</button>
-    <button id="userListDel" class="layui-btn layui-btn-normal"><i class="fa fa-remove"></i> &nbsp;删除</button>
-    <button id="easyuiUserListExport" class="layui-btn layui-btn-normal"><i class="fa fa-hand-o-right"></i> &nbsp;按条件导出</button>
-    <button class="layui-btn layui-btn-normal"><i class="fa fa-hand-o-right"></i> &nbsp;全部导出</button>
-    <button class="layui-btn layui-btn-normal" id="zzz"><i class="fa fa-clipboard"></i> &nbsp;打印预览</button>
-    <button class="layui-btn layui-btn-normal" id="layuilook"><i class="fa fa-clipboard"></i> &nbsp;查看行元素</button>
-    <button class="layui-btn layui-btn-normal" id="download"><i class="fa fa-clipboard"></i> &nbsp;下载FTP文件</button>
-    <button class="layui-btn layui-btn-normal" id="sendMail"><i class="fa fa-clipboard"></i> &nbsp;发送邮件</button>
-    <button type="button" class="layui-btn" id="upload"><i class="layui-icon">&#xe67c;</i>选择文件</button>
+            class="layui-btn layui-btn-sm" ><i class="fa fa-cog fa-spin"></i> &nbsp;查询</button>
+    <button id="userListSave" class="layui-btn layui-btn-sm"><i class="fa fa-remove"></i> &nbsp;保存</button>
+    <button id="userListDel" class="layui-btn layui-btn-sm"><i class="fa fa-remove"></i> &nbsp;删除</button>
+    <button id="easyuiUserListExport" class="layui-btn layui-btn-sm"><i class="fa fa-hand-o-right"></i> &nbsp;按条件导出</button>
+    <button class="layui-btn layui-btn-sm"><i class="fa fa-hand-o-right"></i> &nbsp;全部导出</button>
+    <button class="layui-btn layui-btn-sm" id="zzz"><i class="fa fa-clipboard"></i> &nbsp;打印预览</button>
+    <button class="layui-btn layui-btn-sm" id="layuilook"><i class="fa fa-clipboard"></i> &nbsp;查看行元素</button>
+    <button class="layui-btn layui-btn-sm" id="download"><i class="fa fa-clipboard"></i> &nbsp;下载FTP文件</button>
+    <button class="layui-btn layui-btn-sm" id="sendMail"><i class="fa fa-clipboard"></i> &nbsp;发送邮件</button>
+    <button class="layui-btn layui-btn-sm" id="upload"><i class="layui-icon">&#xe67c;</i>选择文件</button>
+    <button class="layui-btn layui-btn-sm" id="displayPhoto"><i class="fa fa-clipboard"></i> &nbsp;展示图片</button>
 </div>
 
 
@@ -31,33 +32,15 @@
     <legend><i class="fa fa-tasks" id=""></i>&nbsp;基础查询信息</legend>
 </fieldset>
 
-<div style="padding: 20px; background-color: #F2F2F2;" id="formdiv">
+<!--<div style="padding: 20px; background-color: #F2F2F2;" id="formdiv">-->
+<div style="padding: 20px;" id="formdiv">
 
     <!--条件表单-->
     <form class="layui-form" action="userListExport" id="baseQueryForm">
 
-        <!--layui-form-item  表示一行显示-->
-      <!--  <div class="layui-form-item">
-
-
-            <label class="layui-form-label">用户ID:</label>
-            <div class="layui-input-block" style="width: 100px">
-                <input type="text" name="userId" class="layui-input">
-            </div>
-
-            <div class="layui-inline">
-                <label class="layui-form-label">密码</label>
-                <div class="layui-input-inline" style="width: 100px;">
-                    <input type="password" name="" autocomplete="off" class="layui-input">
-                </div>
-            </div>
-
-
-        </div>-->
-
         <div class="layui-form-item">
 
-            <div class="layui-inline">
+            <div class="layui-show-sm-inline">
                 <label class="layui-form-label">用户id</label>
                 <div class="layui-input-inline">
                     <input type="password" name="" autocomplete="off" class="layui-input">
@@ -84,6 +67,13 @@
                         <input type="text" id="registerEnd" name="registerEnd" class="layui-input">
                     </div>
                 </div>
+
+            <div class="layui-inline">
+                <label class="layui-form-label">~~</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="registerEnd2" name="registerEnd" class="layui-input">
+                </div>
+            </div>
 
         </div>
 
