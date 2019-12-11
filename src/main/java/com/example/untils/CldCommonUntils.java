@@ -803,5 +803,23 @@ public class CldCommonUntils {
         }
     }
 
+    public static void writeFileWithLine() {
+
+        try{
+            //当前项目下路径
+            File file = new File("");
+            String filePath = file.getCanonicalPath();
+            System.out.println(filePath);
+//            String fileLocation = "";
+//            FileInputStream fileInputStream = new FileInputStream();
+        }catch (Exception e){}
+
+
+    }
+
+    public static void main(String[] args) {
+        CldCommonUntils.writeFileWithLine();
+    }
+
 
 }
